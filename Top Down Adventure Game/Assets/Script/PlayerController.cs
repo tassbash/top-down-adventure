@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement; //importing SceneManagement library
 public class PlayerController : MonoBehaviour
 {
     public float speed = 0.5f;
+    public bool hasKey = false;
+
+    public GameObject key;
 
     // Start is called before the first frame update
     void Start()
@@ -51,6 +54,13 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("hit");
             SceneManager.LoadScene(1); //access SceneManager class for LoadScene function
+        }
+
+        if (collision.gameObject.tag.Equals("key"))
+        {
+            Debug.Log("obtained key");
+            key.SetActive(false); //key disappears
+            hasKey = true; //player has the key now
         }
     }
 }
