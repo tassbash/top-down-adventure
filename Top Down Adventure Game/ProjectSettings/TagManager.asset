@@ -6,6 +6,7 @@ TagManager:
   tags:
   - door
   - key
+  - exit
   layers:
   - Default
   - TransparentFX
